@@ -13,20 +13,20 @@ Il deviendra un package (par convention), ainsi il est important de respecter ce
 L'artifactId est le nom du projet. Il sera également dans le nom du package (par convention).
 Concernant les règles de nommage, nous ne pouvons pas utiliser des symboles.
 
-6. Le repertoire target 5 dossiers
+6. Le repertoire target à 5 dossiers:
 drwxr-xr-x. 3 avi avi 4,0K 17 sept. 14:26 classes
 drwxr-xr-x. 3 avi avi 4,0K 17 sept. 14:25 generated-sources
 drwxr-xr-x. 3 avi avi 4,0K 17 sept. 14:26 generated-test-sources
 drwxr-xr-x. 3 avi avi 4,0K 17 sept. 14:26 maven-status
 drwxr-xr-x. 3 avi avi 4,0K 17 sept. 14:26 test-classes
 
-7. Le fichier est : td00/src/main/java/fr/dauhpine/ja/mimounavi/td00/App.java
+7. Le fichier est à l'emplacement "javaavance/td00/src/main/java/fr/dauhpine/ja/mimounavi/td00/App.java"
 
 8. Le classpath est un paramètre que nous donnons à la JVM.
 Il permet d'indiquer à la JVM l'emplacement des classes et des packages permettant d'executer le programme.
 
-13. La propriété maven.compiler.target permet d'indiquer à mvn avec quelle version de JVM les classes compilés doivent être compatibles.
-Nous devons mettre 1.8 comme pour maven.compiler.source
+13. La propriété "maven.compiler.target" permet d'indiquer à mvn avec quelle version de JVM les classes compilés doivent être compatibles.
+Nous devons mettre 1.8 comme pour "maven.compiler.source"
 
 
 Exercice 2
@@ -38,7 +38,7 @@ td00$ l target | grep .jar
 td00$ java -cp target/td00-1.0-SNAPSHOT.jar fr.dauphine.ja.mimounavi.td00.App
 Bonjour!
 
-En essayant d'executer notre fichier JAR avec la commande java -jar target/td00-1.0-SNAPSHOT.jar nous obtenons une erreur.
+En essayant d'executer notre fichier JAR avec la commande "java -jar target/td00-1.0-SNAPSHOT.jar" nous obtenons une erreur :
 no main manifest attribute, in target/td00-1.0-SNAPSHOT.jar
 Le problème est que nous n'avons pas de fichier MANIFEST dans le jar
 
@@ -55,14 +55,14 @@ Exercice 3
 
 6. Eclipse nous créé les getter et les setters pour l'attribut toto
 
-7. Alt + Shift + R permet de faire du refactoring. Ainsi, nous pouvons modifier la variable toto (dans cet exemple) sur toutes ses occurences.
+7. "Alt + Shift + R" permet de faire du refactoring. Ainsi, nous pouvons modifier la variable toto (dans cet exemple) sur toutes ses occurences.
 
 8. Le code source de la classe String s'ouvre
 
 
 Exercice 4
 
-6. <mainClass>fr.dauphine.ja.mimounavi.td00.PrimeCollection</mainClass>
+6. "<mainClass>fr.dauphine.ja.mimounavi.td00.PrimeCollection</mainClass>"
 
 ========================================================================================================================
 
@@ -79,9 +79,11 @@ Exercice 1
 
 Exercice 2
 
+5. Le commit sera refusé car le dépot en local est derrière celui du serveur. Nous avons un commit de retard.
+Il nous faudra récupéré le commit du serveur, le fusionner puis envoyer le tout au serveur (origin).
 
-5 et 7. Le commit est rejeté car il existe un confilt (un commit plus récent existe sur le dépôt distant, origin).
-Il faut résoudre le conflit. Pour ce faire, nous devons récupérer les dernières modifications et les fusionner.
+7. Le commit sera rejeté car il existe un confilt (un commit plus récent existe sur le dépôt distant, origin).
+Il faudra résoudre le conflit. Pour ce faire, nous devrons récupérer les dernières modifications, les fusionner et résoudre le conflit à la main.
 
 
 Exercice 3
