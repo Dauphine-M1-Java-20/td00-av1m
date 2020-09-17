@@ -1,0 +1,92 @@
+Mimoun 
+
+TD 00
+
+Exercice 1
+
+4. Apache Maven 3.6.1 (Red Hat 3.6.1-5)
+
+5. Dans mvn, chaque projet est identifié par un groupId, un artifactId et une version (1.0-SNAPSHOT par défaut)
+Le groupId permet d'identifier de manière unique un projet.
+En general, le groupId permet d'identifier un groupe/une organisation. Par exemple com.google.guava
+Il deviendra un package (par convention), ainsi il est important de respecter certaines conventions de nommage similaire au package (ex: com.domain.subdomain)
+L'artifactId est le nom du projet. Il sera également dans le nom du package (par convention).
+Concernant les règles de nommage, nous ne pouvons pas utiliser des symboles.
+
+6. Le repertoire target 5 dossiers
+drwxr-xr-x. 3 avi avi 4,0K 17 sept. 14:26 classes
+drwxr-xr-x. 3 avi avi 4,0K 17 sept. 14:25 generated-sources
+drwxr-xr-x. 3 avi avi 4,0K 17 sept. 14:26 generated-test-sources
+drwxr-xr-x. 3 avi avi 4,0K 17 sept. 14:26 maven-status
+drwxr-xr-x. 3 avi avi 4,0K 17 sept. 14:26 test-classes
+
+7. Le fichier est : td00/src/main/java/fr/dauhpine/ja/mimounavi/td00/App.java
+
+8. Le classpath est un paramètre que nous donnons à la JVM.
+Il permet d'indiquer à la JVM l'emplacement des classes et des packages permettant d'executer le programme.
+
+13. La propriété maven.compiler.target permet d'indiquer à mvn avec quelle version de JVM les classes compilés doivent être compatibles.
+Nous devons mettre 1.8 comme pour maven.compiler.source
+
+
+Exercice 2
+
+1.
+td00$ l target | grep .jar
+-rw-r--r--. 1 avi avi 3,1K 17 sept. 14:43 td00-1.0-SNAPSHOT.jar
+
+td00$ java -cp target/td00-1.0-SNAPSHOT.jar fr.dauphine.ja.mimounavi.td00.App
+Bonjour!
+
+En essayant d'executer notre fichier JAR avec la commande java -jar target/td00-1.0-SNAPSHOT.jar nous obtenons une erreur.
+no main manifest attribute, in target/td00-1.0-SNAPSHOT.jar
+Le problème est que nous n'avons pas de fichier MANIFEST dans le jar
+
+4. Après modification du pom, nous obtenons :
+td00$ java -jar target/td00-1.0-SNAPSHOT.jar
+Bonjour!
+
+
+Exercice 3
+
+3. La magie de l'autocomplétion : Eclipse nous retourne System.out.println() en plaçant notre curseur dans .println()
+
+4. Eclipse nous propose d'Override la fonction toSring() pour la classe.
+
+6. Eclipse nous créé les getter et les setters pour l'attribut toto
+
+7. Alt + Shift + R permet de faire du refactoring. Ainsi, nous pouvons modifier la variable toto (dans cet exemple) sur toutes ses occurences.
+
+8. Le code source de la classe String s'ouvre
+
+
+Exercice 4
+
+6. <mainClass>fr.dauphine.ja.mimounavi.td00.PrimeCollection</mainClass>
+
+========================================================================================================================
+
+TD 00 BIS
+
+Exercice 1
+
+5. Git nous indique la difference dans l'arborescence.
+-        pc.initRandom(100, 1000);
++        pc.initRandom(100, 2000);
+
+10. On peut utiliser git diff HEAD^
+
+
+Exercice 2
+
+
+5 et 7. Le commit est rejeté car il existe un confilt (un commit plus récent existe sur le dépôt distant, origin).
+Il faut résoudre le conflit. Pour ce faire, nous devons récupérer les dernières modifications et les fusionner.
+
+
+Exercice 3
+
+2. Les tests passent. Aucune erreur n'est soulevé.
+En modifiant en "false", les tests ne passent plus.
+assertTrue() permet de vérifier que la condition passé en paramètre est valide.
+
